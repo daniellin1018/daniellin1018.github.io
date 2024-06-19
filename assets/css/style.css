@@ -1650,9 +1650,29 @@ Scroll Top Button
 .product-item {
   background-color: #f6f6f6;
   position: relative;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-  margin-top: 30px;
+  margin: 30px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+/* Add glow effect on hover */
+.product-item:hover {
+  box-shadow: 0 0 20px 5px rgba(255, 196, 81, 0.7); /* Adjust the color and size as needed */
+}
+.product-item__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+}
+.product-item__info-details {
+  display: flex; 
+  flex-direction: column; 
+  align-items: center;
 }
 .product-item__thumb {
   position: relative;
@@ -1661,12 +1681,8 @@ Scroll Top Button
   position: absolute;
   left: 50%;
   top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
   opacity: 0;
   visibility: hidden;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
 }
 .product-item__thumb img {
   text-align: center;
@@ -1674,12 +1690,17 @@ Scroll Top Button
   margin: auto;
 }
 .product-item__content {
-  padding: 0 30px 25px;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Align content at the bottom */
+  align-items: center;
+  text-align: center;
+  height: 100%; /* Added */
 }
 .product-item__content .title {
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 00;
   margin-bottom: 8px;
 }
 @media only screen and (min-width: 768px) and (max-width: 991.98px) {
@@ -1694,59 +1715,17 @@ Scroll Top Button
   }
 }
 .product-item__content .title a {
-  color: #1b1b1c;
+  color: #1c1c1b;
 }
 .product-item__content .price {
   color: #666666;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
 }
 .product-item__content .price strong {
   color: #1b1b1c;
   font-weight: 600;
 }
-.product-item__action {
-  padding: 0 30px;
-  position: absolute;
-  left: 0;
-  bottom: 18px;
-  font-size: 22px;
-  line-height: 1;
-}
-.product-item__action button, .product-item__action a {
-  color: #303030;
-  margin-right: 15px;
-  -webkit-transform: translateX(-10px);
-          transform: translateX(-10px);
-  opacity: 0;
-  visibility: hidden;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-}
 .product-item__action button:last-child, .product-item__action a:last-child {
   margin-right: 0;
-}
-.product-item .ratting {
-  color: #eeb644;
-  font-size: 18px;
-  line-height: 1;
-  text-align: center;
-  margin-bottom: 30px;
-}
-.product-item__sale {
-  background-color: #1b1b1c;
-  color: #FFFFFF;
-  display: inline-table;
-  font-size: 12px;
-  font-weight: 500;
-  padding: 1px 6px;
-  position: absolute;
-  text-transform: uppercase;
-  left: 30px;
-  right: auto;
-  top: 30px;
-  text-align: center;
-  letter-spacing: 0.05em;
 }
 .product-item__desc {
   display: none;
@@ -1798,17 +1777,15 @@ Scroll Top Button
 }
 @media only screen and (max-width: 479.98px) {
   .product-wrapper.columns-5 .col {
-    max-width: 100%;
-    -ms-flex-preferred-size: 100%;
-        flex-basis: 100%;
+    max-width: 50%;
+    -ms-flex-preferred-size: 50%;
+        flex-basis: 50%;
   }
 }
-
 .products-area-wrapper {
   position: relative;
   z-index: 2;
 }
-
 .layout-list [class*=col-] {
   -ms-flex-preferred-size: 100%;
       flex-basis: 100%;
@@ -1869,35 +1846,17 @@ Scroll Top Button
     max-width: 100%;
   }
 }
-.layout-list .product-item__content .ratting {
-  text-align: left;
-}
 .layout-list .product-item__content .title {
   text-transform: uppercase;
   font-weight: 500;
   font-size: 20px;
   margin-bottom: 20px;
 }
-.layout-list .product-item__action {
-  position: static;
-  padding: 0;
-  margin-top: 20px;
-}
-.layout-list .product-item__action button, .layout-list .product-item__action a {
-  opacity: 1;
-  visibility: visible;
-  -webkit-transform: none;
-          transform: none;
-}
 .layout-list .product-item__desc {
   border-top: 1px solid #e1e1e1;
   margin-top: 25px;
   padding-top: 25px;
   display: block;
-}
-.layout-list .product-item:hover .product-item__content .price {
-  opacity: 1;
-  visibility: visible;
 }
 
 /*==========================
@@ -2706,32 +2665,6 @@ Scroll Top Button
 }
 .product-thumb-area .pro-thumb-item img {
   margin: auto;
-}
-.product-thumb-area .product-details-thumbnail {
-  border: 1px solid #e1e1e1;
-  text-align: center;
-  position: relative;
-}
-.product-thumb-area .product-details-thumbnail .btn-large-view {
-  background-color: rgba(255, 255, 255, 0.9);
-  bottom: 20px;
-  -webkit-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.16);
-          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.16);
-  color: #1b1b1c;
-  display: block;
-  font-weight: 700;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  line-height: 22px;
-  padding: 10px 0;
-  position: absolute;
-  text-align: center;
-  width: 136px;
-}
-.product-thumb-area .product-details-thumbnail .btn-large-view i {
-  margin-left: 3px;
-  vertical-align: middle;
 }
 .product-thumb-area .product-details-thumbnail-nav {
   margin-top: 10px;

@@ -738,7 +738,6 @@ section,
   background-color: var(--background-color);
   padding: 60px 0;
   scroll-margin-top: 80px;
-  overflow: clip;
 }
 
 @media (max-width: 1199px) {
@@ -753,7 +752,7 @@ section,
 # Global Section Titles
 --------------------------------------------------------------*/
 .section-title {
-  padding-bottom: 60px;
+  padding-bottom: 0px;
   position: relative;
 }
 
@@ -785,7 +784,10 @@ section,
   font-weight: 700;
   text-transform: uppercase;
 }
-
+#contact .container > .mb-5 {
+  margin-top: 0; /* Remove top margin for iframe container */
+  padding-top: 0; /* Remove top padding for iframe container */
+}
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
@@ -840,6 +842,8 @@ section,
   margin: 10px 0 0 0;
   font-size: 24px;
   color: color-mix(in srgb, var(--default-color), transparent 30%);
+  font-weight: normal;
+  font-style: italic;
 }
 
 .hero .icon-box {
@@ -852,6 +856,7 @@ section,
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 
 .hero .icon-box i {
@@ -1894,6 +1899,8 @@ a {
   transition: 0.4s;
   outline: none;
   text-decoration: none;
+  font-family: Comic Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: auto; /* or 700 for Roboto Bold */
 }
 a:hover, a:active, a:focus {
   color: inherit;
@@ -2248,6 +2255,7 @@ button:active, button:focus {
 .ht-mfp .mfp-content {
   -webkit-transition: 0.3s;
   transition: 0.3s;
+  overflow-y: auto;
 }
 @media only screen and (min-width: 1200px) {
   .ht-mfp .mfp-content {
@@ -3360,7 +3368,7 @@ Scroll Top Button
 .product-item {
   background-color: #f6f6f6;
   position: relative;
-  margin-top: 30px;
+  margin: 30px 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -3369,7 +3377,8 @@ Scroll Top Button
 }
 /* Add glow effect on hover */
 .product-item:hover {
-  box-shadow: 0 0 20px 5px rgba(255, 196, 81, 0.7); /* Adjust the color and size as needed */
+  box-shadow: 0 0 20px 
+  5px rgba(255, 196, 81, 0.7); /* Adjust the color and size as needed */
 }
 .product-item__info {
   display: flex;
@@ -3407,7 +3416,8 @@ Scroll Top Button
   align-items: center;
   text-align: center;
   height: 100%; /* Added */
-}
+  padding-left: 15px;  /* Add padding to the left */
+  padding-right: 15px; /* Add padding to the right */}
 .product-item__content .title {
   font-size: 18px;
   font-weight: 600;
@@ -3442,6 +3452,10 @@ Scroll Top Button
 }
 .product-wrapper .slick-list {
   margin: 0 -15px;
+}
+.col-sm-6,
+.col-lg-4 {
+  margin-bottom: 30px;
 }
 .product-wrapper .slick-slide {
   margin: 0 15px;
@@ -3961,7 +3975,7 @@ Scroll Top Button
 .bg-img {
   background-size: cover;
   background-position: center center;
-  padding-top: 15%; /* Adjust the aspect ratio */
+  padding-top: 20%; /* Adjust the aspect ratio */
 }
 
 @media only screen and (max-width: 767.98px) {
@@ -4405,24 +4419,24 @@ Scroll Top Button
   border: 1px solid #e1e1e1;
   text-align: center;
   position: relative;
+  overflow: auto;
 }
+
 .product-thumb-area .product-details-thumbnail .btn-large-view {
-  background-color: rgba(255, 255, 255, 0.9);
-  bottom: 20px;
-  -webkit-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.16);
-          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.16);
+  background-color: #eeb54400;
   color: #1b1b1c;
   display: block;
-  font-weight: 700;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  font-weight: 600;
   line-height: 22px;
-  padding: 10px 0;
+  padding: 5px 0;
   position: absolute;
   text-align: center;
   width: 136px;
+  bottom: 10px; /* Adjust as needed */
+  right: 10px; /* Adjust as needed */
+  transform: none; /* Remove centering */
 }
+
 .product-thumb-area .product-details-thumbnail .btn-large-view i {
   margin-left: 3px;
   vertical-align: middle;
@@ -5435,4 +5449,65 @@ Scroll Top Button
 .login-form-style form .login-btn button:hover,
 .register-form-style form .login-btn button:hover {
   background-color: #eeb644;
+}
+
+.hero .icon-box .dropdown {
+  position: absolute;
+  top: calc(100% + 10px); /* Position dropdown below the icon box */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Center horizontally */
+  width: 300px;
+  display: none;
+  z-index: 1000; /* Ensure dropdown appears above other content */
+  background-color:#eeb644; /* Grey background color */
+  padding: 10px; /* Adjust padding as needed */
+}
+.hero .icon-box .dropdown ul {
+  margin: 0;
+  padding: 10px 0;
+  background: var(--nav-dropdown-background-color);
+  box-shadow: 0px 0px 30px color-mix(in srgb, var(--default-color), transparent 85%);
+  list-style: none;
+  border-radius: 0;
+}
+
+.hero .icon-box .dropdown ul li {
+  min-width: 200px;
+}
+
+.hero .icon-box .dropdown ul a {
+  display: block;
+  padding: 10px 20px;
+  font-size: 15px;
+  text-transform: none;
+  color: var(--nav-dropdown-color);
+  text-decoration: none;
+}
+
+.hero .icon-box .dropdown ul a:hover,
+.hero .icon-box .dropdown ul .active:hover,
+.hero .icon-box .dropdown ul li:hover > a {
+  background-color: var(--nav-dropdown-hover-color);
+}
+
+.parent-container {
+  overflow: visible; /* Adjust as necessary */
+}
+
+.btn-buy-now {
+  display: inline-block;
+  background-color: #eeb644; /* Button background color */
+  color: #ffffff; /* Button text color */
+  padding: 12px 24px; /* Padding inside the button */
+  border-radius: 5px; /* Rounded corners */
+  text-decoration: none; /* Remove underline from anchor tag */
+  transition: background-color 0.3s ease; /* Smooth background color transition */
+  font-size: large;
+  text-align: center; /* Center text horizontally */
+    margin: 0 auto; /* Center button horizontally */
+    display: block; /* Ensure button takes full width on mobile */
+}
+
+.btn-buy-now:hover {
+  background-color: #b88725; /* Darker background color on hover */
 }

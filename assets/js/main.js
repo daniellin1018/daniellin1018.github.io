@@ -201,3 +201,63 @@
   document.addEventListener('scroll', navmenuScrollspy);
 
 })();
+
+document.addEventListener("DOMContentLoaded", function() {
+  const iconBoxes = document.querySelectorAll('.hero .icon-box');
+
+  iconBoxes.forEach(function(iconBox) {
+    const dropdown = iconBox.querySelector('.dropdown');
+
+    // Add click event listener to icon box
+    iconBox.addEventListener('click', function(event) {
+      event.stopPropagation(); // Prevent event bubbling
+
+      // Toggle dropdown visibility
+      if (dropdown.style.display === 'block') {
+        dropdown.style.display = 'none';
+      } else {
+        closeAllDropdowns(); // Close all other dropdowns
+        dropdown.style.display = 'block';
+      }
+    });
+  });
+
+  // Close all dropdowns when clicking outside an icon box
+  document.addEventListener('click', function(event) {
+    if (!event.target.closest('.icon-box')) {
+      closeAllDropdowns();
+    }
+  });
+
+  function closeAllDropdowns() {
+    const allDropdowns = document.querySelectorAll('.hero .icon-box .dropdown');
+    allDropdowns.forEach(function(dropdown) {
+      dropdown.style.display = 'none';
+    });
+  }
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  const thumbnails = document.querySelectorAll('.product-details-thumbnail-nav .pro-thumb-item img');
+  const mainImage = document.querySelector('.product-details-thumbnail .product-thumbnail-slider img');
+
+  thumbnails.forEach(thumbnail => {
+      thumbnail.addEventListener('click', function() {
+          const newSrc = this.src;
+          mainImage.src = newSrc;
+      });
+  });
+
+  // Initialize Magnific Popup
+  $('.btn-gallery-popup').magnificPopup({
+      delegate: 'figure',
+      type: 'image',
+      gallery: {
+          enabled: true
+      },
+      zoom: {
+          enabled: true,
+          duration: 300 // duration of the effect, in milliseconds
+      }
+  });
+});
