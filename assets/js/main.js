@@ -261,3 +261,22 @@ document.addEventListener('DOMContentLoaded', function() {
       }
   });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+  var buttons = document.querySelectorAll('.btn-buy-now');
+  buttons.forEach(function(button) {
+      button.addEventListener('click', function(event) {
+          event.preventDefault();
+          var productDetails = button.closest('.prod-details-info-content');
+          var productName = productDetails.querySelector('h2').textContent.trim();
+          var productPrice = productDetails.querySelector('.price-amount').textContent.trim();
+          var phoneNumber = button.getAttribute('data-phone');
+          var webpageLink = window.location.href;
+
+          var message = `Hello, I would like to know more about ${productName} which costs ${productPrice}. You can view it here: ${webpageLink}`;
+          var whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+          window.open(whatsappLink, '_blank');
+      });
+  });
+});

@@ -5511,3 +5511,23 @@ Scroll Top Button
 .btn-buy-now:hover {
   background-color: #b88725; /* Darker background color on hover */
 }
+
+.whatsapp-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #eeb644; /* WhatsApp green color */
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-bottom: 10px;
+}
+
+.whatsapp-button:hover {
+  background-color: #128C7E; /* Darker shade for hover effect */
+}
