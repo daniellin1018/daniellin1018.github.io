@@ -76,7 +76,7 @@ h6 {
   --contrast-color: #ffffff;
   color: var(--default-color);
   background-color: var(--background-color);
-  padding: 10px 0;
+  padding: 0 0;
   transition: all 0.5s;
   z-index: 997;
 }
@@ -3975,7 +3975,7 @@ Scroll Top Button
 .bg-img {
   background-size: cover;
   background-position: center center;
-  padding-top: 20%; /* Adjust the aspect ratio */
+  padding-top: 25%; /* Adjust the aspect ratio */
 }
 
 @media only screen and (max-width: 767.98px) {
