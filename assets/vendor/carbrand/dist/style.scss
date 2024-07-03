@@ -27,9 +27,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.car-acura {
+.car-supra {
   &:before {
-    content: $car-acura; 
+    content: $car-supra; 
   }
 }
 .car-alfa-romeo {
@@ -467,4 +467,5 @@
     content: $car-volvo-alt; 
   }
 }
+
 
