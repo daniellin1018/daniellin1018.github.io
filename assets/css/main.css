@@ -5531,3 +5531,13 @@ Scroll Top Button
 .whatsapp-button:hover {
   background-color: #128C7E; /* Darker shade for hover effect */
 }
+
+.icon-box-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.icon-box-link .icon-box {
+  /* Add any additional styling needed for the icon-box */
+}
